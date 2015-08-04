@@ -18,7 +18,7 @@ class BlaBlaView:UIViewController{
     
     
     override func viewDidLoad() {
-        imageBlaBla = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 300));
+        imageBlaBla = UIImageView(frame: CGRect(x: 0, y: 0, width: 200  , height: 200));
         
         textBlaBla = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 40));
         textBlaBla?.center = view.center;

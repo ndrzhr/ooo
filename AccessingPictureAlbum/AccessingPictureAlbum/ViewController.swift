@@ -17,12 +17,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate,UIImagePi
     var btnRetrive:UIButton!;
     let btnAlbumImage = UIImage(named: "photoAlbumIcon");
     let btnRetriveImage = UIImage(named: "monsters-02");
+    var btnRetrive2: UIButton!;
     
     var cameraController: UIImagePickerController?;
     var action: UIAlertAction?;
     var userInput = "";
     
     var userPhoto:PFObject?;
+    
+    var objectIdArray:[String]?;
+    var imageViews:[UIImage]?;
     
 
     override func viewDidLoad() {
@@ -42,6 +46,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate,UIImagePi
         btnRetrive.setImage(btnRetriveImage, forState: UIControlState.Normal);
         btnRetrive.addTarget(self, action: "btnRetrivePressed:", forControlEvents: UIControlEvents.TouchUpInside);
         
+        btnRetrive2 = UIButton(frame: CGRect(x: 30, y: 30, width: 300, height: 50));
+        btnRetrive2.addTarget(self, action: "btnRetrivepressed2:", forControlEvents: UIControlEvents.TouchUpInside);
+        btnRetrive2.backgroundColor = UIColor.yellowColor();
+        
+        view.addSubview(btnRetrive2)
         view.addSubview(btnRetrive);
         view.addSubview(btnAlbum);
         view.addSubview(btnCamera);
@@ -136,85 +145,39 @@ class ViewController: UIViewController, UINavigationControllerDelegate,UIImagePi
         
         var retrivedView = BlaBlaView();
         retrivedView.view.backgroundColor = UIColor.lightGrayColor();
-        retrivedView.imageBlaBla!.image = UIImage(named: "monsters-02");
-        retrivedView.textBlaBla?.text = "Hi"
+        //retrivedView.imageBlaBla!.image = UIImage(named: "monsters-02");
+        //retrivedView.textBlaBla?.text = "Hi"
         
         var query = PFQuery(className: "userPhoto");
         
-        
+        query.whereKey("textInput", equalTo: "maayan");
         query.getObjectInBackgroundWithId("ZddXPWYUma", block: { (blabla: PFObject?, error:NSError?) -> Void in
             if error == nil && blabla != nil{
-                println(blabla)
-                
-                println(blabla);
-           var imageImage =  blabla!.objectForKey("imageFile") as? PFFile;
-                imageImage?.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
-                    if error != nil{
-                        retrivedView.imageBlaBla?.image = UIImage(data: imageData!);
-                        
+                let userImageFile = blabla?["imageFile"] as! PFFile
+                userImageFile.getDataInBackgroundWithBlock {
+                    (imageData: NSData?, error: NSError?) -> Void in
+                    if error == nil {
+                        if let imageData = imageData {
+                            let image = UIImage(data:imageData);
+                            retrivedView.imageBlaBla?.image = image;
+                        }
                     }
-                });
-            
-            
-                
-                
-                
-                
-                retrivedView.textBlaBla?.text =  blabla?.objectForKey("textInput") as? String;
-                
-                
-                
+                };
+            retrivedView.textBlaBla?.text =  blabla?.objectForKey("textInput") as? String;
+    
             }else{
                 println(error);
             }
-            
-            
-            
-            /*
-            query.findObjectsInBackgroundWithBlock({[weak self] (objects:[AnyObject]?, error: NSError?) -> Void in
-                if error == nil {
-                    if let object = objects as? [PFObject]{
-                       println(object.description)
-                       // let userImageFile = anotherPhoto["imageFile"] as! Pffile;
-
-                        var userImageFile = object["imageFile"] as! NSData;
-                        var image01 = UIImage(data: userImageFile);
-                        retrivedView.imageBlaBla?.image = image01;
-
-                        
-                        
-                    }
-                }
-                });
-*/
-            
-            
-            /*
-            var image = UIImage();
-            let imageData = UIImagePNGRepresentation(image);
-            let imageFile = PFFile(name: "image.png", data: imageData)
-            
-            var anotherUserPhot = PFObject(className: "usserPhoto");
-            
-            
-            let userImageFile = anotherUserPhot["imageFile"] as! PFFile;
-            anotherUserPhot.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
-                if error == nil{
-                    if let imageData = imageData{
-                        let image = UIImage(data: imageData)
-                        retrivedView.imageBlaBla?.image = image;
-
-        }
-                }
-            })*/
-            
-            
-
-            
         });
- 
+
         self.presentViewController(retrivedView, animated: true, completion: nil);
         
+    }
+    
+    func btnRetrivepressed2(sender:UIButton){
+        var feedCollectionView = FeedCollectionViewController();
+
+        presentViewController(feedCollectionView, animated: true, completion: nil);
     }
     
 }
