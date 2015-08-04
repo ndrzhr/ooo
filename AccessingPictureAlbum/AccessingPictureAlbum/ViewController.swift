@@ -25,12 +25,41 @@ class ViewController: UIViewController, UINavigationControllerDelegate,UIImagePi
     
     var userPhoto:PFObject?;
     
-    var objectIdArray:[String]?;
-    var imageViews:[UIImage]?;
+    var objectIdArray = [String]();
+    //var imageViews:[UIImage];
+    var numberOfCells:Int = 0;
+    
+    var Query = PFQuery();
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            
+            self.Query = PFQuery(className: "userPhoto");
+            self.numberOfCells =  self.Query.findObjects()!.count as Int
+            self.Query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+                if error == nil{
+                    var counter = 0;
+                    if let objects = objects as? [PFObject]{
+                        for object in objects {
+                            
+                            //println(object.objectId!);
+                            self.objectIdArray.append(object.objectId!);
+                            //println("\(self.objectIdArray[counter]) **")
+                            counter++;
+                        }
+                    }
+                }else{
+                    println(error)
+                }
+            };
+
+            
+        });
+        
+        
         
         btnCamera = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 80));
         btnCamera.setImage(btnImage, forState: UIControlState.Normal);
@@ -148,10 +177,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate,UIImagePi
         //retrivedView.imageBlaBla!.image = UIImage(named: "monsters-02");
         //retrivedView.textBlaBla?.text = "Hi"
         
-        var query = PFQuery(className: "userPhoto");
+       // var query = PFQuery(className: "userPhoto");
         
-        query.whereKey("textInput", equalTo: "maayan");
-        query.getObjectInBackgroundWithId("ZddXPWYUma", block: { (blabla: PFObject?, error:NSError?) -> Void in
+       // query.whereKey("textInput", equalTo: "maayan");
+        Query.getObjectInBackgroundWithId("ZddXPWYUma", block: { (blabla: PFObject?, error:NSError?) -> Void in
             if error == nil && blabla != nil{
                 let userImageFile = blabla?["imageFile"] as! PFFile
                 userImageFile.getDataInBackgroundWithBlock {

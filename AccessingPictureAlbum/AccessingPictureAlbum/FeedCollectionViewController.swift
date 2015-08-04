@@ -12,12 +12,13 @@ import Parse
 
 class FeedCollectionViewController: UIViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource {
     
-    var numberOfCells: Int!;
-    var objectIdArray:[String]!;
-    //var imageviews:[UIImage]!;
+    var objectIdArray = [String]();
+
+    var imageviews:[UIImage]!;
     
     var collectionView: UICollectionView!;
     
+    var imageTest: UIImage?;
     var point: CGPoint!;
     var size: CGSize!;
 
@@ -25,43 +26,23 @@ class FeedCollectionViewController: UIViewController,UICollectionViewDelegateFlo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+
         var query = PFQuery(className: "userPhoto");
-        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+        query.findObjectsInBackgroundWithBlock { (objects:[AnyObject]?, error: NSError?) -> Void in
             if error == nil{
-                self.numberOfCells = objects!.count;
-                
-                println("Seccessfully retrieved \(self.numberOfCells) ");
                 if let objects = objects as? [PFObject]{
-                    for object in objects{
-                        println(object.objectId);
-                        //self.objectIdArray?.append(object.objectId!);
-                        //self.objectIdArray = self.objectIdArray;
-                       // let userImageFile = object["imageFile"] as! PFFile
-                        // userImageFile.getDataInBackgroundWithBlock {
-                        // (imageData: NSData?, error: NSError?) -> Void in
-                        //  if error == nil {
-                        //     if let imageData = imageData {
-                        //        let image = UIImage(data:imageData);
-                        //       self.imageViews!.append(image!);
-                        
-                        //   }
-                        // }
-                        // };
-                        
+                    for object in objects {
+                        self.objectIdArray.append(object.objectId!);
+                        println("**\(self.objectIdArray.count)");
+
+  
                     }
-                    
-                    // feedCollectionView.imageviews = self.imageViews ;
                 }
             }
-        };
-
+        }
         
         
-        ////---------
-        
+        //println(objectIdArray[1]);
         point = CGPoint(x: 0, y: 0)
         size = CGSize(width: view.bounds.width/2 - 22 , height: view.bounds.height / 3);
         var cellFrame = CGRect(origin: point, size: size);
@@ -80,21 +61,59 @@ class FeedCollectionViewController: UIViewController,UICollectionViewDelegateFlo
     }
     
      func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cellView = UIView(frame: CGRect(origin:point, size: size))
-        cellView.backgroundColor = UIColor.whiteColor();
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! UICollectionViewCell;
-        var lableCell = UILabel(frame: CGRect(x: 0, y: size.height - 20, width: size.width, height: 20));
-        lableCell.text = objectIdArray?[indexPath.row]
+        
+        
+      dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        var cellView = UIView(frame: CGRect(origin:self.point, size: self.size))
+        cellView.backgroundColor = UIColor.whiteColor();
+        
+        var lableCell = UILabel(frame: CGRect(x: 0, y: self.size.height - 20, width: self.size.width, height: 20));
+        //println("\(self.objectIdArray.count)")
+        //lableCell.text = self.objectIdArray[indexPath.row + 1]
+        
         lableCell.backgroundColor = UIColor.whiteColor();
         var imageViewCell = UIImageView(frame: CGRect(x: 0, y: 0, width: cellView.bounds.width, height: cellView.bounds.height - lableCell.bounds.height))
-       // imageViewCell.image = imageviews[indexPath.row];
+        //imageViewCell.image = self.imageviews[indexPath.row + 1];
+       // imageViewCell.image = self.imageTest;
         cellView.addSubview(imageViewCell);
         cellView.addSubview(lableCell);
         cell.addSubview(cellView);
+      });
+     
+        
+       
         return cell;
     }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numberOfCells!;
+        
+        var query = PFQuery(className: "userPhoto");
+        var number = query.findObjects()!.count as Int;
+        return number;
+    }
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        println("item: \(indexPath.item)")
+        println("row: \(indexPath.row)")
+
     }
 }
+/*
+if error == nil && blabla != nil{
+let userImageFile = blabla?["imageFile"] as! PFFile
+userImageFile.getDataInBackgroundWithBlock {
+(imageData: NSData?, error: NSError?) -> Void in
+if error == nil {
+if let imageData = imageData {
+let image = UIImage(data:imageData);
+//self.imageviews.append(image!);
+self.imageTest = image;
+
+}
+}
+};
+}else{
+println(error);
+}
+
+*/
