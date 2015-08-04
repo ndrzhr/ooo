@@ -135,9 +135,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate,UIImagePi
     func btnRetrivePressed(sender:UIButton){
         
         var retrivedView = BlaBlaView();
-        
-        
-            retrivedView.view.backgroundColor = UIColor.lightGrayColor();
+        retrivedView.view.backgroundColor = UIColor.lightGrayColor();
         retrivedView.imageBlaBla!.image = UIImage(named: "monsters-02");
         retrivedView.textBlaBla?.text = "Hi"
         
@@ -148,7 +146,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate,UIImagePi
                 println(blabla)
                 
                 var imageData:NSData?
-                
                 println(blabla);
                // let userImageFile = anotherPhoto["imageFile"] as PFFile;
                 
