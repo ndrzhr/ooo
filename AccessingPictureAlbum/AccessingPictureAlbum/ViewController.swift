@@ -146,13 +146,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate,UIImagePi
             if error == nil && blabla != nil{
                 println(blabla)
                 
-                var imageData:NSData?
                 println(blabla);
-               // let userImageFile = anotherPhoto["imageFile"] as PFFile;
+            
                 
                 
-
+                
+                
                 retrivedView.textBlaBla?.text =  blabla?.objectForKey("textInput") as? String;
+                
+                
                 
             }else{
                 println(error);
