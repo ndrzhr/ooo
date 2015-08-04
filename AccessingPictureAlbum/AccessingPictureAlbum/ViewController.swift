@@ -149,7 +149,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate,UIImagePi
                 
                 var imageData:NSData?
                 
-                blabla["imageFile"] = imageData;
+                println(blabla);
+               // let userImageFile = anotherPhoto["imageFile"] as PFFile;
+                
+                
 
                 retrivedView.textBlaBla?.text =  blabla?.objectForKey("textInput") as? String;
                 
