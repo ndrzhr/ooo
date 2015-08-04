@@ -147,6 +147,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate,UIImagePi
                 println(blabla)
                 
                 println(blabla);
+           var imageImage =  blabla!.objectForKey("imageFile") as? PFFile;
+                imageImage?.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
+                    if error != nil{
+                        retrivedView.imageBlaBla?.image = UIImage(data: imageData!);
+                        
+                    }
+                });
+            
             
                 
                 
