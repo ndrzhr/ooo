@@ -141,6 +141,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate,UIImagePi
         
         var query = PFQuery(className: "userPhoto");
         
+        
         query.getObjectInBackgroundWithId("ZddXPWYUma", block: { (blabla: PFObject?, error:NSError?) -> Void in
             if error == nil && blabla != nil{
                 println(blabla)
