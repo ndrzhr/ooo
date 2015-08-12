@@ -21,22 +21,21 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
     let btnCameraImage = UIImage(named: "btnCameraImage")
     var objects = [AnyObject]();
     
-   
+    
     
     convenience init(objects:[AnyObject]){
         self.init();
         self.objects = objects;
     }
-
-
-
- 
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad();
         //----
         point = CGPoint(x: 0, y: 0);
         size = CGSize(width: view.bounds.width/2 - 22 , height: view.bounds.height / 3);
-        //var cellFrame =
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout();
         layout.sectionInset = UIEdgeInsets(top: 122, left: 10, bottom: 40, right: 10);
         layout.itemSize = size;
@@ -73,9 +72,7 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
             }
         }
         
-        //cell.textLabel.text = "indexpath.row \(indexPath.row)"
         cell.textLabel.text = cellData.objectId;
-        //cell.imageView.image = UIImage(named: "btnCameraImage");
         cell.textLabel.textColor = UIColor.whiteColor();
         return cell;
         
@@ -85,5 +82,5 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
         println("You have selected item number \(indexPath.row) which is the object \(objects[indexPath.row])")
     }
     
-
+    
 }
