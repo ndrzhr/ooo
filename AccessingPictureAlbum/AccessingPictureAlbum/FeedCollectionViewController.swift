@@ -26,20 +26,22 @@ class FeedCollectionViewController: UIViewController,UICollectionViewDelegateFlo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        var query = PFQuery(className: "userPhoto");
-        query.findObjectsInBackgroundWithBlock { (objects:[AnyObject]?, error: NSError?) -> Void in
-            if error == nil{
-                if let objects = objects as? [PFObject]{
-                    for object in objects {
-                        self.objectIdArray.append(object.objectId!);
-                        println("**\(self.objectIdArray.count)");
-
-  
+        dispatch_sync(dispatch_get_global_queue(Int(QOS_CLASS_USER_INTERACTIVE.value), 0), { () -> Void in
+            var query = PFQuery(className: "userPhoto");
+            query.findObjectsInBackgroundWithBlock { (objects:[AnyObject]?, error: NSError?) -> Void in
+                if error == nil{
+                    if let objects = objects as? [PFObject]{
+                        for object in objects {
+                            self.objectIdArray.append(object.objectId!);
+                            println("**\(self.objectIdArray.count)");
+                            
+                            
+                        }
                     }
                 }
             }
-        }
+        });
+
         
         
         //println(objectIdArray[1]);
@@ -70,7 +72,7 @@ class FeedCollectionViewController: UIViewController,UICollectionViewDelegateFlo
         
         var lableCell = UILabel(frame: CGRect(x: 0, y: self.size.height - 20, width: self.size.width, height: 20));
         //println("\(self.objectIdArray.count)")
-        //lableCell.text = self.objectIdArray[indexPath.row + 1]
+        lableCell.text = self.objectIdArray[indexPath.row + 1]
         
         lableCell.backgroundColor = UIColor.whiteColor();
         var imageViewCell = UIImageView(frame: CGRect(x: 0, y: 0, width: cellView.bounds.width, height: cellView.bounds.height - lableCell.bounds.height))
