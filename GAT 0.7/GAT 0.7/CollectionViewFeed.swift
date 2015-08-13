@@ -10,17 +10,22 @@ import Foundation
 import UIKit
 import Parse
 import Bolts
+import MobileCoreServices
 
 
-class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource,UINavigationControllerDelegate {
+class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
     
     var collectionView: UICollectionView!;
     var point: CGPoint!;
     var size: CGSize!;
-    var btnCamera:UIButton!;
-    let btnCameraImage = UIImage(named: "btnCameraImage")
+    var btnAdd:UIButton!;
+    let btnAddImage = UIImage(named: "btnAdd")
+    let btnCameraImage = UIImage(named: "btnCameraImage");
+    let btnAlbumImage = UIImage(named: "btnAlbumImage");
     var objects = [AnyObject]();
-    
+    var cameraController: UIImagePickerController?;
+    var albumController: UIImagePickerController?;
+    var btnOpenAlbum: UIButton?;
     
     
     convenience init(objects:[AnyObject]){
@@ -35,7 +40,7 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
         super.viewDidLoad();
         //----
         point = CGPoint(x: 0, y: 0);
-        size = CGSize(width: view.bounds.width/2 - 22 , height: view.bounds.height / 3);
+        size = CGSize(width: view.bounds.width/2 - 22 , height: view.bounds.height / 3 - 15);
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout();
         layout.sectionInset = UIEdgeInsets(top: 122, left: 10, bottom: 40, right: 10);
         layout.itemSize = size;
@@ -45,12 +50,14 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
         collectionView.dataSource = self;
         collectionView.delegate = self;
         collectionView.registerClass(CollectionViewFeedCell.self, forCellWithReuseIdentifier: "Cell");
+        collectionView.backgroundColor = UIColor.whiteColor();
         //-----
-        btnCamera = UIButton(frame: CGRect(x: view.bounds.width / 2 - 35, y: view.bounds.height - 140, width: 70, height: 70));
-        btnCamera.setImage(btnCameraImage, forState: UIControlState.Normal);
+        btnAdd = UIButton(frame: CGRect(x: view.bounds.width / 2 - 35, y: view.bounds.height - 140, width: 70, height: 70));
+        btnAdd.setImage(btnAddImage, forState: UIControlState.Normal);
+        btnAdd.addTarget(self, action: "btnAddPressed", forControlEvents: UIControlEvents.TouchUpInside);
         
         view.addSubview(collectionView);
-        view.addSubview(btnCamera);
+        view.addSubview(btnAdd);
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -81,6 +88,45 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         println("You have selected item number \(indexPath.row) which is the object \(objects[indexPath.row])")
     }
-    
-    
+    func isCameraAvialable()-> Bool{
+        return UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera);
+    }
+    func isAlbumAvialable()->Bool{
+        return UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary);
+    }
+    func btnAddPressed(){
+        var alert = UIAlertController(title: "Image Source", message: "Pleas Choose Image Source", preferredStyle: UIAlertControllerStyle.ActionSheet);
+        
+        var actionCam = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (action: UIAlertAction!) -> Void in
+            if self.isCameraAvialable(){
+                self.cameraController = UIImagePickerController();
+                if let theController = self.cameraController{
+                    theController.sourceType = UIImagePickerControllerSourceType.Camera;
+                    theController.mediaTypes = [kUTTypeImage as String];
+                    theController.allowsEditing = true;
+                    theController.delegate = self;
+                    theController.showsCameraControls = true;
+                    self.presentViewController(theController, animated: true, completion: nil);
+                }
+            }
+        };
+        var actionAlbum = UIAlertAction(title: "Album", style: UIAlertActionStyle.Default) { (action: UIAlertAction!) -> Void in
+            if self.isAlbumAvialable(){
+                self.albumController = UIImagePickerController();
+                if let theController = self.albumController{
+                    theController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+                    theController.mediaTypes = [kUTTypeImage as String];
+                    theController.allowsEditing = true;
+                    theController.delegate = self;
+                    self.presentViewController(theController, animated: true, completion: nil);
+                }
+            }
+        };
+        var actionCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Destructive, handler: nil);
+        alert.addAction(actionCam);
+        alert.addAction(actionAlbum);
+        alert.addAction(actionCancel);
+        presentViewController(alert, animated: true, completion: nil);
+    }
+
 }

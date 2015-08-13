@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F720A1591B7CCA5F000EC7FF /* btnAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = F720A1581B7CCA5F000EC7FF /* btnAdd.png */; };
+		F720A15D1B7CD887000EC7FF /* btnAlbumImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F720A15C1B7CD887000EC7FF /* btnAlbumImage.png */; };
 		F72FEEC01B7B83AD00A8A1E3 /* btnCameraImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FEEBF1B7B83AD00A8A1E3 /* btnCameraImage.png */; };
 		F7C5F4E21B7A66CD002ED7A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F4E11B7A66CD002ED7A5 /* AppDelegate.swift */; };
 		F7C5F4E41B7A66CD002ED7A5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F4E31B7A66CD002ED7A5 /* FirstViewController.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F720A1581B7CCA5F000EC7FF /* btnAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnAdd.png; sourceTree = "<group>"; };
+		F720A15C1B7CD887000EC7FF /* btnAlbumImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnAlbumImage.png; sourceTree = "<group>"; };
 		F72FEEBF1B7B83AD00A8A1E3 /* btnCameraImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnCameraImage.png; sourceTree = "<group>"; };
 		F7C5F4DC1B7A66CD002ED7A5 /* GAT 0.7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GAT 0.7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C5F4E01B7A66CD002ED7A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 				F7C5F4E71B7A66CD002ED7A5 /* Main.storyboard */,
 				F7C5F4EA1B7A66CD002ED7A5 /* Images.xcassets */,
 				F7C5F4EC1B7A66CD002ED7A5 /* LaunchScreen.xib */,
+				F720A1581B7CCA5F000EC7FF /* btnAdd.png */,
+				F720A15C1B7CD887000EC7FF /* btnAlbumImage.png */,
 				F72FEEBF1B7B83AD00A8A1E3 /* btnCameraImage.png */,
 				F7C5F4DF1B7A66CD002ED7A5 /* Supporting Files */,
 			);
@@ -279,6 +285,8 @@
 			files = (
 				F7C5F4E91B7A66CD002ED7A5 /* Main.storyboard in Resources */,
 				F72FEEC01B7B83AD00A8A1E3 /* btnCameraImage.png in Resources */,
+				F720A1591B7CCA5F000EC7FF /* btnAdd.png in Resources */,
+				F720A15D1B7CD887000EC7FF /* btnAlbumImage.png in Resources */,
 				F7C5F4EE1B7A66CD002ED7A5 /* LaunchScreen.xib in Resources */,
 				F7C5F4EB1B7A66CD002ED7A5 /* Images.xcassets in Resources */,
 			);
