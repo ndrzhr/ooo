@@ -128,7 +128,7 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
 
         images.append(image);
         reloadInputViews();
-        
+        // ****
         
         
     }
