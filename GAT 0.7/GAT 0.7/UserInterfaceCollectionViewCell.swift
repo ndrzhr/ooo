@@ -18,15 +18,15 @@ class UserInterfaceCollectionViewCell: UICollectionViewCell{
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: (frame.size.height/6)*5))
+        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: (frame.size.height/6)*6))
         //imageView.contentMode = UIViewContentMode.ScaleAspectFit
         contentView.backgroundColor = UIColor.lightGrayColor();
         contentView.addSubview(imageView)
         
-        textLabel = UILabel(frame: CGRect(x: 0, y: imageView.frame.size.height, width: frame.size.width, height: frame.size.height/6))
-        textLabel.font = UIFont.systemFontOfSize(UIFont.smallSystemFontSize())
-        textLabel.textAlignment = .Center
-        contentView.addSubview(textLabel)
+        //textLabel = UILabel(frame: CGRect(x: 0, y: imageView.frame.size.height, width: frame.size.width, height: frame.size.height/6))
+        //textLabel.font = UIFont.systemFontOfSize(UIFont.smallSystemFontSize())
+        //textLabel.textAlignment = .Center
+        //contentView.addSubview(textLabel)
     }
     
     required init(coder aDecoder: NSCoder) {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F70DD9B71B7D189D00933739 /* UserPictureInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70DD9B61B7D189D00933739 /* UserPictureInterface.swift */; };
 		F70DD9B91B7E22A700933739 /* UserInterfaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70DD9B81B7E22A700933739 /* UserInterfaceCollectionViewCell.swift */; };
+		F70DD9BD1B7E6CD200933739 /* Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = F70DD9BC1B7E6CD200933739 /* Upload.png */; };
 		F720A1591B7CCA5F000EC7FF /* btnAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = F720A1581B7CCA5F000EC7FF /* btnAdd.png */; };
 		F720A15D1B7CD887000EC7FF /* btnAlbumImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F720A15C1B7CD887000EC7FF /* btnAlbumImage.png */; };
 		F72FEEC01B7B83AD00A8A1E3 /* btnCameraImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FEEBF1B7B83AD00A8A1E3 /* btnCameraImage.png */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		F70DD9B61B7D189D00933739 /* UserPictureInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPictureInterface.swift; sourceTree = "<group>"; };
 		F70DD9B81B7E22A700933739 /* UserInterfaceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInterfaceCollectionViewCell.swift; sourceTree = "<group>"; };
+		F70DD9BC1B7E6CD200933739 /* Upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Upload.png; sourceTree = "<group>"; };
 		F720A1581B7CCA5F000EC7FF /* btnAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnAdd.png; sourceTree = "<group>"; };
 		F720A15C1B7CD887000EC7FF /* btnAlbumImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnAlbumImage.png; sourceTree = "<group>"; };
 		F72FEEBF1B7B83AD00A8A1E3 /* btnCameraImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnCameraImage.png; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				F7C5F4EA1B7A66CD002ED7A5 /* Images.xcassets */,
 				F7C5F4EC1B7A66CD002ED7A5 /* LaunchScreen.xib */,
 				F720A1581B7CCA5F000EC7FF /* btnAdd.png */,
+				F70DD9BC1B7E6CD200933739 /* Upload.png */,
 				F720A15C1B7CD887000EC7FF /* btnAlbumImage.png */,
 				F72FEEBF1B7B83AD00A8A1E3 /* btnCameraImage.png */,
 				F7C5F4DF1B7A66CD002ED7A5 /* Supporting Files */,
@@ -291,6 +294,7 @@
 			files = (
 				F7C5F4E91B7A66CD002ED7A5 /* Main.storyboard in Resources */,
 				F72FEEC01B7B83AD00A8A1E3 /* btnCameraImage.png in Resources */,
+				F70DD9BD1B7E6CD200933739 /* Upload.png in Resources */,
 				F720A1591B7CCA5F000EC7FF /* btnAdd.png in Resources */,
 				F720A15D1B7CD887000EC7FF /* btnAlbumImage.png in Resources */,
 				F7C5F4EE1B7A66CD002ED7A5 /* LaunchScreen.xib in Resources */,

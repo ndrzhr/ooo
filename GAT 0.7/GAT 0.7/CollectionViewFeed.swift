@@ -107,11 +107,14 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
         var alert = UIAlertController(title: "Image Source", message: "Pleas Choose Image Source", preferredStyle: UIAlertControllerStyle.ActionSheet);
         
         var actionCam = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (action: UIAlertAction!) -> Void in
-            self.showCamera(false);
+            var user = UserPictureInterface(camera: true, album: false);
+            //self.showCamera(false);
+            self.presentViewController(user, animated: false, completion: nil);
         };
         var actionAlbum = UIAlertAction(title: "Album", style: UIAlertActionStyle.Default) { (action: UIAlertAction!) -> Void in
-            self.showAlbum();
-            
+            var user = UserPictureInterface(camera: false, album: true);
+            //self.showAlbum();
+            self.presentViewController(user, animated: false, completion: nil);
         };
         var actionCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Destructive, handler: nil);
         alert.addAction(actionCam);

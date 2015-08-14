@@ -12,7 +12,7 @@ import Parse
 import Bolts
 import MobileCoreServices
 
-class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate{
     
     var collectionViewUser:UICollectionView!;
     var images:[UIImage] = [UIImage]();
@@ -24,20 +24,28 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
     var size:CGSize!;
     var cameraController: UIImagePickerController?;
     var albumController: UIImagePickerController?;
-
+    var showCameraBool:Bool = false;
+    var showAlbumeBool:Bool = false;
+    
     
     convenience init(images:[UIImage]){
         self.init();
         self.images = images;
-        }
+    }
+    convenience init(camera:Bool,album:Bool){
+        self.init();
+        showCameraBool = camera;
+        showAlbumeBool = album;
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-   
+        showCamera(false);
+        
         
         point = CGPoint(x: 0, y: 0);
-        size = CGSize(width: view.bounds.width/2 - 22 , height: view.bounds.height / 3 - 15);
+        size = CGSize(width: view.bounds.width/2 - 22 , height: view.bounds.height / 3 - 40);
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout();
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 40, right: 10);
         layout.itemSize = size;
@@ -48,35 +56,23 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
         view.backgroundColor = UIColor.lightGrayColor();
         println("\(images.count)")
         view.addSubview(collectionViewUser)
-
+        
         
         
         
         
     }
     override func viewDidAppear(animated: Bool) {
-        var alert = UIAlertController(title: "---", message: "save or keep picking picturs?", preferredStyle: UIAlertControllerStyle.ActionSheet);
-        var actionCamera = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (action: UIAlertAction!) -> Void in
-            if self.isCameraAvialable(){
-                self.cameraController = UIImagePickerController();
-                if let theController = self.cameraController{
-                    theController.sourceType = UIImagePickerControllerSourceType.Camera;
-                    theController.mediaTypes = [kUTTypeImage as String];
-                    theController.allowsEditing = true;
-                    theController.delegate = self;
-                    theController.showsCameraControls = true;
-                    self.presentViewController(theController, animated: animated, completion: nil);
-                    
-                }
-            }
-                    }
         
-        var actionAlbum = UIAlertAction(title: "Album", style: UIAlertActionStyle.Default, handler: nil);
-        var actionCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Destructive, handler: nil);
-        alert.addAction(actionCamera);
-        alert.addAction(actionAlbum);
-        alert.addAction(actionCancel);
-        presentViewController(alert, animated: true, completion: nil);
+        if showCameraBool{
+            self.showCamera(false);
+        }else if showAlbumeBool{
+            self.showAlbum();
+            
+        }else{
+            
+        }
+        
     }
     func btnAddPressed(){
     }
@@ -95,7 +91,7 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
     func isAlbumAvialable()->Bool{
         return UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary);
     }
-
+    
     
     func showCamera(animated:Bool) -> UIImagePickerController {
         if self.isCameraAvialable(){
@@ -125,11 +121,71 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
         }
     }
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
-
+        showCameraBool = false;
+        showAlbumeBool = false;
         images.append(image);
-        reloadInputViews();
-        // ****
         
+        if images.count <= 3{
+            dismissViewControllerAnimated(true, completion: { () -> Void in
+                var alert = UIAlertController(title: "---", message: "save or keep picking picturs?", preferredStyle: UIAlertControllerStyle.ActionSheet);
+                var actionCamera = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (action: UIAlertAction!) -> Void in
+                    if self.isCameraAvialable(){
+                        self.cameraController = UIImagePickerController();
+                        if let theController = self.cameraController{
+                            theController.sourceType = UIImagePickerControllerSourceType.Camera;
+                            theController.mediaTypes = [kUTTypeImage as String];
+                            theController.allowsEditing = true;
+                            theController.delegate = self;
+                            theController.showsCameraControls = true;
+                            self.presentViewController(theController, animated: true, completion: nil);
+                            
+                        }
+                    }
+                }
+                
+                var actionAlbum = UIAlertAction(title: "Album", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) -> Void in
+                    self.showCameraBool = false;
+                    self.showAlbumeBool = true;
+                    self.showAlbum()
+                });
+                var actionCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Destructive, handler: { (action: UIAlertAction!) -> Void in
+                    self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        println("dissmised from userInterfaceController")
+                    });
+                });
+                var actionUplaod = UIAlertAction(title: "Save", style: UIAlertActionStyle.Cancel, handler: { (action:UIAlertAction!) -> Void in
+                    var btnSave = UIButton(frame: CGRect(x: self.view.bounds.width / 2 - 35, y: self.view.bounds.height - 80, width: 70, height: 70));
+                    btnSave.setImage(UIImage(named: "Upload"), forState: UIControlState.Normal)
+                    btnSave.addTarget(self, action: "uploadToServer", forControlEvents: UIControlEvents.TouchUpInside);
+                    self.view.addSubview(btnSave);
+                   // self.collectionViewUser.backgroundColor = UIColor.whiteColor();
+                    self.collectionViewUser.reloadData();
+                })
+                alert.addAction(actionCamera);
+                alert.addAction(actionAlbum);
+                alert.addAction(actionCancel);
+                alert.addAction(actionUplaod);
+                self.presentViewController(alert, animated: true, completion: nil);
+                
+            });
+        }else{
+            self.dismissViewControllerAnimated(true, completion: nil);
+            var btnSave = UIButton(frame: CGRect(x: self.view.bounds.width / 2 - 35, y: self.view.bounds.height - 80, width: 70, height: 70));
+            btnSave.setImage(UIImage(named: "Upload"), forState: UIControlState.Normal)
+            btnSave.addTarget(self, action: "uploadToServer", forControlEvents: UIControlEvents.TouchUpInside);
+            self.view.addSubview(btnSave);
+           // self.collectionViewUser.backgroundColor = UIColor.whiteColor();
+            self.collectionViewUser.reloadData();
+        }
         
+        self.collectionViewUser.reloadData();
+    }
+    
+    func uploadToServer(){
+        dismissViewControllerAnimated(true, completion: { () -> Void in
+            println("Here we Uplaod to the server in the background...");
+            
+        });
+        self.collectionViewUser.dataSource = nil;
     }
 }
