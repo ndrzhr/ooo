@@ -26,6 +26,10 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
     var cameraController: UIImagePickerController?;
     var albumController: UIImagePickerController?;
     var btnOpenAlbum: UIButton?;
+    var userPictureInterface = UserPictureInterface();
+    
+    var images:[UIImage] = [UIImage]();
+    
     
     
     convenience init(objects:[AnyObject]){
@@ -58,6 +62,11 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
         
         view.addSubview(collectionView);
         view.addSubview(btnAdd);
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated);
+        
+        
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -98,29 +107,11 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
         var alert = UIAlertController(title: "Image Source", message: "Pleas Choose Image Source", preferredStyle: UIAlertControllerStyle.ActionSheet);
         
         var actionCam = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (action: UIAlertAction!) -> Void in
-            if self.isCameraAvialable(){
-                self.cameraController = UIImagePickerController();
-                if let theController = self.cameraController{
-                    theController.sourceType = UIImagePickerControllerSourceType.Camera;
-                    theController.mediaTypes = [kUTTypeImage as String];
-                    theController.allowsEditing = true;
-                    theController.delegate = self;
-                    theController.showsCameraControls = true;
-                    self.presentViewController(theController, animated: true, completion: nil);
-                }
-            }
+            self.showCamera(false);
         };
         var actionAlbum = UIAlertAction(title: "Album", style: UIAlertActionStyle.Default) { (action: UIAlertAction!) -> Void in
-            if self.isAlbumAvialable(){
-                self.albumController = UIImagePickerController();
-                if let theController = self.albumController{
-                    theController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
-                    theController.mediaTypes = [kUTTypeImage as String];
-                    theController.allowsEditing = true;
-                    theController.delegate = self;
-                    self.presentViewController(theController, animated: true, completion: nil);
-                }
-            }
+            self.showAlbum();
+            
         };
         var actionCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Destructive, handler: nil);
         alert.addAction(actionCam);
@@ -128,5 +119,44 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
         alert.addAction(actionCancel);
         presentViewController(alert, animated: true, completion: nil);
     }
-
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        
+        picker.allowsEditing = true;
+        picker.delegate = self;
+        dismissViewControllerAnimated(false, completion: { () -> Void in
+            //self.showCamera(true);
+            
+        });
+        userPictureInterface.images.append(image);
+        self.presentViewController(userPictureInterface, animated: true, completion: nil);
+    }
+    
+    func showCamera(animated:Bool){
+        if self.isCameraAvialable(){
+            self.cameraController = UIImagePickerController();
+            if let theController = self.cameraController{
+                theController.sourceType = UIImagePickerControllerSourceType.Camera;
+                theController.mediaTypes = [kUTTypeImage as String];
+                theController.allowsEditing = true;
+                theController.delegate = self;
+                theController.showsCameraControls = true;
+                self.presentViewController(theController, animated: animated, completion: nil);
+                
+            }
+        }
+    }
+    func showAlbum(){
+        if self.isAlbumAvialable(){
+            self.albumController = UIImagePickerController();
+            if let theController = self.albumController{
+                theController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+                theController.mediaTypes = [kUTTypeImage as String];
+                theController.allowsEditing = true;
+                theController.delegate = self;
+                self.presentViewController(theController, animated: true, completion: nil);
+            }
+        }
+    }
+    
 }
