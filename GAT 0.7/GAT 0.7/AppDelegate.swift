@@ -31,6 +31,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         // ...
+        /*
+        
+        // tryed to add the CollectionView Controller tab programaticly but it didnt work .. 
+        // got this: "Presenting view controllers on detached view controllers is discouraged"
+        
+        var vc1 = FirstViewController();
+        var vc2 = SecondViewController();
+        var vc3 = CollectionViewFeed();
+        var controllers:NSArray = [vc1,vc2,vc3];
+        var tabBarController = UITabBarController();
+        tabBarController.viewControllers = controllers as [AnyObject];
+        window?.addSubview(tabBarController.view);
+        */
         return true
     }
 

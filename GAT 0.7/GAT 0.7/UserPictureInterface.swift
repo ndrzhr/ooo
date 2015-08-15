@@ -127,7 +127,7 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
         
         if images.count <= 3{
             dismissViewControllerAnimated(true, completion: { () -> Void in
-                var alert = UIAlertController(title: "---", message: "save or keep picking picturs?", preferredStyle: UIAlertControllerStyle.ActionSheet);
+                var alert = UIAlertController(title: "Add another Photo", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet);
                 var actionCamera = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (action: UIAlertAction!) -> Void in
                     if self.isCameraAvialable(){
                         self.cameraController = UIImagePickerController();
@@ -182,10 +182,32 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
     }
     
     func uploadToServer(){
-        dismissViewControllerAnimated(true, completion: { () -> Void in
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
             println("Here we Uplaod to the server in the background...");
             
+            
+            for i  in 0..<self.images.count{
+                var userPhoto = PFObject(className: "userPhoto");
+                let imageData = UIImagePNGRepresentation(self.images[i]);
+                let imageFile = PFFile(name: "image.png", data: imageData);
+                userPhoto["imageName"] = "camera v 0.7"
+                userPhoto["imageFile"] = imageFile;
+                
+                userPhoto.saveInBackground();
+
+            }
+            
+            
         });
+        self.collectionViewUser.dataSource = nil;
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(false, completion: nil);
+
+        showAlbumeBool = false;
+        showCameraBool = false;
+        self.dismissViewControllerAnimated(true, completion: nil);
         self.collectionViewUser.dataSource = nil;
     }
 }

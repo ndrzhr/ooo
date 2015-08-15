@@ -42,6 +42,8 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        
+        
         //----
         point = CGPoint(x: 0, y: 0);
         size = CGSize(width: view.bounds.width/2 - 22 , height: view.bounds.height / 3 - 15);
@@ -59,6 +61,7 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
         btnAdd = UIButton(frame: CGRect(x: view.bounds.width / 2 - 35, y: view.bounds.height - 140, width: 70, height: 70));
         btnAdd.setImage(btnAddImage, forState: UIControlState.Normal);
         btnAdd.addTarget(self, action: "btnAddPressed", forControlEvents: UIControlEvents.TouchUpInside);
+        
         
         view.addSubview(collectionView);
         view.addSubview(btnAdd);
@@ -161,5 +164,7 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
             }
         }
     }
+    
+
     
 }

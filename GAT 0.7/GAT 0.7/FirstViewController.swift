@@ -15,6 +15,8 @@ class FirstViewController: UIViewController {
     var isLoaded:Bool = false;
     var Query = PFQuery(className: "userPhoto");
     var objectsRetrivedFromServer = [AnyObject]();
+    var feed:CollectionViewFeed?;
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +27,8 @@ class FirstViewController: UIViewController {
                 self.objectsRetrivedFromServer = objects!;
                 self.isLoaded = true;
                 println(self.isLoaded)
-                var feed = CollectionViewFeed(objects: self.objectsRetrivedFromServer);
-                self.presentViewController(feed, animated: true, completion: nil);
+                self.feed = CollectionViewFeed(objects: self.objectsRetrivedFromServer);
+                self.presentViewController(self.feed!, animated: true, completion: nil);
             }else{
                 println(error)
             }
@@ -42,5 +44,6 @@ class FirstViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 }
 
