@@ -11,9 +11,10 @@ import UIKit
 import Parse
 import Bolts
 import MobileCoreServices
+import CoreLocation
 
 
-class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
+class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate,CLLocationManagerDelegate {
     
     var collectionView: UICollectionView!;
     var point: CGPoint!;
@@ -30,7 +31,7 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
     
     var images:[UIImage] = [UIImage]();
     
-    
+
     
     convenience init(objects:[AnyObject]){
         self.init();
@@ -42,8 +43,7 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
     
     override func viewDidLoad() {
         super.viewDidLoad();
-        
-        
+
         //----
         point = CGPoint(x: 0, y: 0);
         size = CGSize(width: view.bounds.width/2 - 22 , height: view.bounds.height / 3 - 15);
@@ -89,6 +89,7 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
                     
                 }
             }
+            
         }
         
         cell.textLabel.text = cellData.objectId;
@@ -99,6 +100,13 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         println("You have selected item number \(indexPath.row) which is the object \(objects[indexPath.row])")
+        var object = objects[indexPath.row] as! PFObject;
+        let item = ItemDetailedView(object: object);
+
+        self.presentViewController(item, animated: true, completion: nil);
+       
+        
+        
     }
     func isCameraAvialable()-> Bool{
         return UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera);
@@ -164,7 +172,4 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
             }
         }
     }
-    
-
-    
-}
+   }

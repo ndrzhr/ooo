@@ -11,8 +11,9 @@ import UIKit
 import Parse
 import Bolts
 import MobileCoreServices
+import CoreLocation
 
-class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate{
+class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate,CLLocationManagerDelegate {
     
     var collectionViewUser:UICollectionView!;
     var images:[UIImage] = [UIImage]();
@@ -26,6 +27,8 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
     var albumController: UIImagePickerController?;
     var showCameraBool:Bool = false;
     var showAlbumeBool:Bool = false;
+    
+    let locationManager = CLLocationManager();
     
     
     convenience init(images:[UIImage]){
@@ -42,6 +45,11 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
         super.viewDidLoad()
         
         showCamera(false);
+        
+        //locationManager.delegate = self;
+        //locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        //locationManager.requestWhenInUseAuthorization();
+        //locationManager.startUpdatingLocation();
         
         
         point = CGPoint(x: 0, y: 0);
@@ -210,4 +218,5 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
         self.dismissViewControllerAnimated(true, completion: nil);
         self.collectionViewUser.dataSource = nil;
     }
+
 }

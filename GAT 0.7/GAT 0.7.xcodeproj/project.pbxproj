@@ -10,9 +10,11 @@
 		F70DD9B71B7D189D00933739 /* UserPictureInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70DD9B61B7D189D00933739 /* UserPictureInterface.swift */; };
 		F70DD9B91B7E22A700933739 /* UserInterfaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70DD9B81B7E22A700933739 /* UserInterfaceCollectionViewCell.swift */; };
 		F70DD9BD1B7E6CD200933739 /* Upload.png in Resources */ = {isa = PBXBuildFile; fileRef = F70DD9BC1B7E6CD200933739 /* Upload.png */; };
+		F7199EB01B7F8152007069E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7199EAF1B7F8152007069E5 /* MapKit.framework */; };
 		F720A1591B7CCA5F000EC7FF /* btnAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = F720A1581B7CCA5F000EC7FF /* btnAdd.png */; };
 		F720A15D1B7CD887000EC7FF /* btnAlbumImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F720A15C1B7CD887000EC7FF /* btnAlbumImage.png */; };
 		F72FEEC01B7B83AD00A8A1E3 /* btnCameraImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FEEBF1B7B83AD00A8A1E3 /* btnCameraImage.png */; };
+		F75C1B801B7F9A05009A5B87 /* ItemDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C1B7F1B7F9A05009A5B87 /* ItemDetailedView.swift */; };
 		F7C5F4E21B7A66CD002ED7A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F4E11B7A66CD002ED7A5 /* AppDelegate.swift */; };
 		F7C5F4E41B7A66CD002ED7A5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F4E31B7A66CD002ED7A5 /* FirstViewController.swift */; };
 		F7C5F4E61B7A66CD002ED7A5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F4E51B7A66CD002ED7A5 /* SecondViewController.swift */; };
@@ -54,9 +56,11 @@
 		F70DD9B61B7D189D00933739 /* UserPictureInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPictureInterface.swift; sourceTree = "<group>"; };
 		F70DD9B81B7E22A700933739 /* UserInterfaceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInterfaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		F70DD9BC1B7E6CD200933739 /* Upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Upload.png; sourceTree = "<group>"; };
+		F7199EAF1B7F8152007069E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F720A1581B7CCA5F000EC7FF /* btnAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnAdd.png; sourceTree = "<group>"; };
 		F720A15C1B7CD887000EC7FF /* btnAlbumImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnAlbumImage.png; sourceTree = "<group>"; };
 		F72FEEBF1B7B83AD00A8A1E3 /* btnCameraImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnCameraImage.png; sourceTree = "<group>"; };
+		F75C1B7F1B7F9A05009A5B87 /* ItemDetailedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailedView.swift; sourceTree = "<group>"; };
 		F7C5F4DC1B7A66CD002ED7A5 /* GAT 0.7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GAT 0.7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C5F4E01B7A66CD002ED7A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7C5F4E11B7A66CD002ED7A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				F7C5F5171B7A679E002ED7A5 /* CoreLocation.framework in Frameworks */,
 				F7C5F5151B7A6791002ED7A5 /* CoreGraphics.framework in Frameworks */,
 				F7C5F5131B7A6783002ED7A5 /* CFNetwork.framework in Frameworks */,
+				F7199EB01B7F8152007069E5 /* MapKit.framework in Frameworks */,
 				F7C5F5111B7A6772002ED7A5 /* AudioToolbox.framework in Frameworks */,
 				F7C5F50F1B7A6748002ED7A5 /* ParseUI.framework in Frameworks */,
 				F7C5F50B1B7A6748002ED7A5 /* Parse.framework in Frameworks */,
@@ -125,6 +130,7 @@
 		F7C5F4D31B7A66CD002ED7A5 = {
 			isa = PBXGroup;
 			children = (
+				F7199EAF1B7F8152007069E5 /* MapKit.framework */,
 				F7C5F5221B7A67EB002ED7A5 /* libsqlite3.dylib */,
 				F7C5F5201B7A67DF002ED7A5 /* libz.dylib */,
 				F7C5F51E1B7A67D2002ED7A5 /* SystemConfiguration.framework */,
@@ -160,6 +166,7 @@
 				F7C5F5241B7A684A002ED7A5 /* CollectionViewFeed.swift */,
 				F7C5F5261B7A68A7002ED7A5 /* CollectionViewFeedCell.swift */,
 				F70DD9B61B7D189D00933739 /* UserPictureInterface.swift */,
+				F75C1B7F1B7F9A05009A5B87 /* ItemDetailedView.swift */,
 				F70DD9B81B7E22A700933739 /* UserInterfaceCollectionViewCell.swift */,
 				F7C5F4E71B7A66CD002ED7A5 /* Main.storyboard */,
 				F7C5F4EA1B7A66CD002ED7A5 /* Images.xcassets */,
@@ -261,6 +268,11 @@
 				TargetAttributes = {
 					F7C5F4DB1B7A66CD002ED7A5 = {
 						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					F7C5F4F21B7A66CD002ED7A5 = {
 						CreatedOnToolsVersion = 6.4;
@@ -323,6 +335,7 @@
 				F70DD9B91B7E22A700933739 /* UserInterfaceCollectionViewCell.swift in Sources */,
 				F7C5F5251B7A684A002ED7A5 /* CollectionViewFeed.swift in Sources */,
 				F7C5F4E41B7A66CD002ED7A5 /* FirstViewController.swift in Sources */,
+				F75C1B801B7F9A05009A5B87 /* ItemDetailedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

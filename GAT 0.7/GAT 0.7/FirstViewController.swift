@@ -9,18 +9,25 @@
 import UIKit
 import Parse
 import Bolts
+import CoreLocation
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController , CLLocationManagerDelegate{
     
     var isLoaded:Bool = false;
     var Query = PFQuery(className: "userPhoto");
     var objectsRetrivedFromServer = [AnyObject]();
     var feed:CollectionViewFeed?;
+    let locationManager = CLLocationManager();
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        locationManager.requestWhenInUseAuthorization();
+        locationManager.startUpdatingLocation();
         
         Query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             if error == nil{
@@ -43,6 +50,33 @@ class FirstViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: { (placemarkers, error) -> Void in
+            if(error != nil){
+                println("Error: " + error.localizedDescription);
+                return
+            }
+            if placemarkers.count > 0{
+                let pm = placemarkers[0] as! CLPlacemark;
+                self.displayLocationInfo(pm);
+            }else{
+                println("Error with data")
+            }
+        });
+    }
+    
+    func displayLocationInfo(placemark: CLPlacemark){
+        self.locationManager.stopUpdatingLocation();
+        println(placemark.locality);
+        println(placemark.postalCode);
+        println(placemark.administrativeArea);
+        println(placemark.country);
+    }
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        println("Error: " + error.localizedDescription)
     }
 
 }
