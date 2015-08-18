@@ -43,6 +43,7 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        view.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height);
 
         //----
         point = CGPoint(x: 0, y: 0);
@@ -65,6 +66,7 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
         
         view.addSubview(collectionView);
         view.addSubview(btnAdd);
+   
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated);

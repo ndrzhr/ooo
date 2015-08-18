@@ -40,6 +40,8 @@
 		F7C5F5231B7A67EB002ED7A5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C5F5221B7A67EB002ED7A5 /* libsqlite3.dylib */; };
 		F7C5F5251B7A684A002ED7A5 /* CollectionViewFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F5241B7A684A002ED7A5 /* CollectionViewFeed.swift */; };
 		F7C5F5271B7A68A7002ED7A5 /* CollectionViewFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F5261B7A68A7002ED7A5 /* CollectionViewFeedCell.swift */; };
+		F7C78F001B8340DC00A2CBAD /* closeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C78EFF1B8340DC00A2CBAD /* closeIcon.png */; };
+		F7C78F021B83436B00A2CBAD /* chair-512.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C78F011B83436B00A2CBAD /* chair-512.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		F7C5F5221B7A67EB002ED7A5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		F7C5F5241B7A684A002ED7A5 /* CollectionViewFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFeed.swift; sourceTree = "<group>"; };
 		F7C5F5261B7A68A7002ED7A5 /* CollectionViewFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFeedCell.swift; sourceTree = "<group>"; };
+		F7C78EFF1B8340DC00A2CBAD /* closeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closeIcon.png; sourceTree = "<group>"; };
+		F7C78F011B83436B00A2CBAD /* chair-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chair-512.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +175,9 @@
 				F7C5F4E71B7A66CD002ED7A5 /* Main.storyboard */,
 				F7C5F4EA1B7A66CD002ED7A5 /* Images.xcassets */,
 				F7C5F4EC1B7A66CD002ED7A5 /* LaunchScreen.xib */,
+				F7C78EFF1B8340DC00A2CBAD /* closeIcon.png */,
 				F720A1581B7CCA5F000EC7FF /* btnAdd.png */,
+				F7C78F011B83436B00A2CBAD /* chair-512.png */,
 				F70DD9BC1B7E6CD200933739 /* Upload.png */,
 				F720A15C1B7CD887000EC7FF /* btnAlbumImage.png */,
 				F72FEEBF1B7B83AD00A8A1E3 /* btnCameraImage.png */,
@@ -304,11 +310,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C78F021B83436B00A2CBAD /* chair-512.png in Resources */,
 				F7C5F4E91B7A66CD002ED7A5 /* Main.storyboard in Resources */,
 				F72FEEC01B7B83AD00A8A1E3 /* btnCameraImage.png in Resources */,
 				F70DD9BD1B7E6CD200933739 /* Upload.png in Resources */,
 				F720A1591B7CCA5F000EC7FF /* btnAdd.png in Resources */,
 				F720A15D1B7CD887000EC7FF /* btnAlbumImage.png in Resources */,
+				F7C78F001B8340DC00A2CBAD /* closeIcon.png in Resources */,
 				F7C5F4EE1B7A66CD002ED7A5 /* LaunchScreen.xib in Resources */,
 				F7C5F4EB1B7A66CD002ED7A5 /* Images.xcassets in Resources */,
 			);

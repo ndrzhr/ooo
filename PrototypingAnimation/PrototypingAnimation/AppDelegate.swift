@@ -1,52 +1,21 @@
 //
 //  AppDelegate.swift
-//  GAT 0.7
+//  PrototypingAnimation
 //
-//  Created by ndrzhr on 8/11/15.
+//  Created by ndrzhr on 8/17/15.
 //  Copyright (c) 2015 ndrzhr. All rights reserved.
 //
 
 import UIKit
-import Parse
-import Bolts
-
-
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let themeColor = UIColor(red: 0.01, green: 0.41, blue: 0.22, alpha: 1.0)
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        // [Optional] Power your app with Local Datastore. For more info, go to
-        // https://parse.com/docs/ios_guide#localdatastore/iOS
-        Parse.enableLocalDatastore()
-        
-        // Initialize Parse.
-        Parse.setApplicationId("BdQ2wn1H3bJ0czS074CjCmbPNKzL1P4Rl0tuK73Y",
-            clientKey: "UmCs6JudkEm1F3YGsALWE6lfekkRy3uGLupQnmn8")
-        
-        // [Optional] Track statistics around application opens.
-        PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-        
-        // ...
-        /*
-        
-        // tryed to add the CollectionView Controller tab programaticly but it didnt work .. 
-        // got this: "Presenting view controllers on detached view controllers is discouraged"
-        
-        var vc1 = FirstViewController();
-        var vc2 = SecondViewController();
-        var vc3 = CollectionViewFeed();
-        var controllers:NSArray = [vc1,vc2,vc3];
-        var tabBarController = UITabBarController();
-        tabBarController.viewControllers = controllers as [AnyObject];
-        window?.addSubview(tabBarController.view);
-        */
-        window?.tintColor = themeColor;
         return true
     }
 

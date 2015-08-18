@@ -23,7 +23,6 @@ class FirstViewController: UIViewController , CLLocationManagerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.requestWhenInUseAuthorization();
@@ -35,7 +34,9 @@ class FirstViewController: UIViewController , CLLocationManagerDelegate{
                 self.isLoaded = true;
                 println(self.isLoaded)
                 self.feed = CollectionViewFeed(objects: self.objectsRetrivedFromServer);
+                
                 self.presentViewController(self.feed!, animated: true, completion: nil);
+                
             }else{
                 println(error)
             }
