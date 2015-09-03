@@ -16,6 +16,7 @@
 		F72FEEC01B7B83AD00A8A1E3 /* btnCameraImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F72FEEBF1B7B83AD00A8A1E3 /* btnCameraImage.png */; };
 		F755445E1B849B110045427C /* sendMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = F755445D1B849B110045427C /* sendMessage.png */; };
 		F75544621B849D050045427C /* haertIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F75544611B849D050045427C /* haertIcon.png */; };
+		F75544641B84B5530045427C /* userImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F75544631B84B5530045427C /* userImage.png */; };
 		F75C1B801B7F9A05009A5B87 /* ItemDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C1B7F1B7F9A05009A5B87 /* ItemDetailedView.swift */; };
 		F7C5F4E21B7A66CD002ED7A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F4E11B7A66CD002ED7A5 /* AppDelegate.swift */; };
 		F7C5F4E41B7A66CD002ED7A5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5F4E31B7A66CD002ED7A5 /* FirstViewController.swift */; };
@@ -45,6 +46,7 @@
 		F7C78F001B8340DC00A2CBAD /* closeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C78EFF1B8340DC00A2CBAD /* closeIcon.png */; };
 		F7C78F021B83436B00A2CBAD /* chair-512.png in Resources */ = {isa = PBXBuildFile; fileRef = F7C78F011B83436B00A2CBAD /* chair-512.png */; };
 		F7C78F041B83751300A2CBAD /* ItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C78F031B83751300A2CBAD /* ItemDetails.swift */; };
+		F7F023961B84D9AC00DB2C0D /* conditionIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F7F023951B84D9AC00DB2C0D /* conditionIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,7 @@
 		F72FEEBF1B7B83AD00A8A1E3 /* btnCameraImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnCameraImage.png; sourceTree = "<group>"; };
 		F755445D1B849B110045427C /* sendMessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sendMessage.png; sourceTree = "<group>"; };
 		F75544611B849D050045427C /* haertIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = haertIcon.png; sourceTree = "<group>"; };
+		F75544631B84B5530045427C /* userImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userImage.png; sourceTree = "<group>"; };
 		F75C1B7F1B7F9A05009A5B87 /* ItemDetailedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailedView.swift; sourceTree = "<group>"; };
 		F7C5F4DC1B7A66CD002ED7A5 /* GAT 0.7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GAT 0.7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C5F4E01B7A66CD002ED7A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 		F7C78EFF1B8340DC00A2CBAD /* closeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closeIcon.png; sourceTree = "<group>"; };
 		F7C78F011B83436B00A2CBAD /* chair-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chair-512.png"; sourceTree = "<group>"; };
 		F7C78F031B83751300A2CBAD /* ItemDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetails.swift; sourceTree = "<group>"; };
+		F7F023951B84D9AC00DB2C0D /* conditionIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = conditionIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +190,9 @@
 				F7C78EFF1B8340DC00A2CBAD /* closeIcon.png */,
 				F720A1581B7CCA5F000EC7FF /* btnAdd.png */,
 				F75544611B849D050045427C /* haertIcon.png */,
+				F75544631B84B5530045427C /* userImage.png */,
 				F7C78F011B83436B00A2CBAD /* chair-512.png */,
+				F7F023951B84D9AC00DB2C0D /* conditionIcon.png */,
 				F70DD9BC1B7E6CD200933739 /* Upload.png */,
 				F720A15C1B7CD887000EC7FF /* btnAlbumImage.png */,
 				F72FEEBF1B7B83AD00A8A1E3 /* btnCameraImage.png */,
@@ -278,11 +284,14 @@
 		F7C5F4D41B7A66CD002ED7A5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = ndrzhr;
 				TargetAttributes = {
 					F7C5F4DB1B7A66CD002ED7A5 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = UV8KGRK5GX;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -322,12 +331,14 @@
 				F7C78F021B83436B00A2CBAD /* chair-512.png in Resources */,
 				F755445E1B849B110045427C /* sendMessage.png in Resources */,
 				F7C5F4E91B7A66CD002ED7A5 /* Main.storyboard in Resources */,
+				F75544641B84B5530045427C /* userImage.png in Resources */,
 				F72FEEC01B7B83AD00A8A1E3 /* btnCameraImage.png in Resources */,
 				F70DD9BD1B7E6CD200933739 /* Upload.png in Resources */,
 				F720A1591B7CCA5F000EC7FF /* btnAdd.png in Resources */,
 				F720A15D1B7CD887000EC7FF /* btnAlbumImage.png in Resources */,
 				F7C78F001B8340DC00A2CBAD /* closeIcon.png in Resources */,
 				F75544621B849D050045427C /* haertIcon.png in Resources */,
+				F7F023961B84D9AC00DB2C0D /* conditionIcon.png in Resources */,
 				F7C5F4EE1B7A66CD002ED7A5 /* LaunchScreen.xib in Resources */,
 				F7C5F4EB1B7A66CD002ED7A5 /* Images.xcassets in Resources */,
 			);
@@ -482,6 +493,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1-3",
@@ -489,6 +502,7 @@
 				INFOPLIST_FILE = "GAT 0.7/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -496,6 +510,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1-3",
@@ -503,6 +519,7 @@
 				INFOPLIST_FILE = "GAT 0.7/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

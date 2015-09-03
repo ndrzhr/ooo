@@ -81,7 +81,7 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)as! CollectionViewFeedCell;
-        var cellData = objects[indexPath.row] as! PFObject;
+        let cellData = objects[indexPath.row] as! PFObject;
         let cellImageFile = cellData["imageFile"] as! PFFile;
         cellImageFile.getDataInBackgroundWithBlock { (data: NSData?, error: NSError?) -> Void in
             if error == nil{
@@ -101,8 +101,8 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        println("You have selected item number \(indexPath.row) which is the object \(objects[indexPath.row])")
-        var object = objects[indexPath.row] as! PFObject;
+        print("You have selected item number \(indexPath.row) which is the object \(objects[indexPath.row])")
+        let object = objects[indexPath.row] as! PFObject;
         let item = ItemDetailedView(object: object);
 
         self.presentViewController(item, animated: true, completion: nil);
@@ -117,19 +117,19 @@ class CollectionViewFeed: UIViewController, UICollectionViewDelegate,UICollectio
         return UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary);
     }
     func btnAddPressed(){
-        var alert = UIAlertController(title: "Image Source", message: "Pleas Choose Image Source", preferredStyle: UIAlertControllerStyle.ActionSheet);
+        let alert = UIAlertController(title: "Image Source", message: "Pleas Choose Image Source", preferredStyle: UIAlertControllerStyle.ActionSheet);
         
-        var actionCam = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (action: UIAlertAction!) -> Void in
-            var user = UserPictureInterface(camera: true, album: false);
+        let actionCam = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (action: UIAlertAction) -> Void in
+            let user = UserPictureInterface(camera: true, album: false);
             //self.showCamera(false);
             self.presentViewController(user, animated: false, completion: nil);
         };
-        var actionAlbum = UIAlertAction(title: "Album", style: UIAlertActionStyle.Default) { (action: UIAlertAction!) -> Void in
-            var user = UserPictureInterface(camera: false, album: true);
+        let actionAlbum = UIAlertAction(title: "Album", style: UIAlertActionStyle.Default) { (action: UIAlertAction) -> Void in
+            let user = UserPictureInterface(camera: false, album: true);
             //self.showAlbum();
             self.presentViewController(user, animated: false, completion: nil);
         };
-        var actionCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Destructive, handler: nil);
+        let actionCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Destructive, handler: nil);
         alert.addAction(actionCam);
         alert.addAction(actionAlbum);
         alert.addAction(actionCancel);

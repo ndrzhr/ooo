@@ -22,24 +22,31 @@ class FirstViewController: UIViewController , CLLocationManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        locationManager.delegate = self;
+        locationManager.requestWhenInUseAuthorization();
+        locationManager.startUpdatingLocation();
+       // print("location: lat:\(locationManager.location.coordinate.latitude ) long: \(locationManager.location.coordinate.longitude )")
+        
         Query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
             if error == nil{
                 self.objectsRetrivedFromServer = objects!;
                 self.isLoaded = true;
-                println(self.isLoaded)
+                print(self.isLoaded)
                 self.feed = CollectionViewFeed(objects: self.objectsRetrivedFromServer);
                 
                 self.presentViewController(self.feed!, animated: true, completion: nil);
                 
             }else{
-                println(error)
+                print(error)
             }
         };
+        
         
     }
     
     override func viewDidAppear(animated: Bool) {
+        
         super.viewDidAppear(animated);
     }
     
@@ -47,6 +54,8 @@ class FirstViewController: UIViewController , CLLocationManagerDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func viewDidDisappear(animated: Bool) {
+        locationManager.stopUpdatingLocation();
+    }
   }
 

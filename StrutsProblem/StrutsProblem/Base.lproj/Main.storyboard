@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="StrutsProblem" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tj4-aE-BkQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="jFw-EW-IA0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJ8-0e-H6m">
+                                <rect key="frame" x="20" y="294" width="560" height="254"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kKl-cd-bAi">
+                                <rect key="frame" x="20" y="20" width="230" height="254"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaV-dd-TLN">
+                                <rect key="frame" x="350" y="20" width="230" height="254"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="TaV-dd-TLN" secondAttribute="trailing" constant="20" id="DGD-e7-rBj"/>
+                            <constraint firstAttribute="trailing" secondItem="jJ8-0e-H6m" secondAttribute="trailing" constant="20" id="HCL-7v-hve"/>
+                            <constraint firstItem="TaV-dd-TLN" firstAttribute="height" secondItem="kKl-cd-bAi" secondAttribute="height" id="Nt8-jA-Kmh"/>
+                            <constraint firstItem="TaV-dd-TLN" firstAttribute="width" secondItem="kKl-cd-bAi" secondAttribute="width" id="b83-U9-d6y"/>
+                            <constraint firstItem="kKl-cd-bAi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="cAN-dj-Tyr"/>
+                            <constraint firstItem="jJ8-0e-H6m" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="eRL-8Q-KX7"/>
+                            <constraint firstItem="TaV-dd-TLN" firstAttribute="leading" secondItem="kKl-cd-bAi" secondAttribute="trailing" constant="100" id="g02-ag-fEm"/>
+                            <constraint firstItem="kKl-cd-bAi" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" id="gEK-nn-U2g"/>
+                            <constraint firstItem="jJ8-0e-H6m" firstAttribute="top" secondItem="kKl-cd-bAi" secondAttribute="bottom" constant="20" id="raE-xe-0hd"/>
+                            <constraint firstAttribute="bottom" secondItem="jJ8-0e-H6m" secondAttribute="bottom" constant="52" id="wJ6-Xx-FLd"/>
+                            <constraint firstItem="TaV-dd-TLN" firstAttribute="height" secondItem="jJ8-0e-H6m" secondAttribute="height" id="wZL-t1-Cxi"/>
+                            <constraint firstItem="TaV-dd-TLN" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" id="xXs-8p-kKo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomView" destination="jJ8-0e-H6m" id="loF-U9-di0"/>
+                        <outlet property="topLeftView" destination="kKl-cd-bAi" id="IBq-Qh-CNy"/>
+                        <outlet property="topRightView" destination="TaV-dd-TLN" id="L4X-N4-tM9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221" y="388"/>
+        </scene>
+    </scenes>
+</document>

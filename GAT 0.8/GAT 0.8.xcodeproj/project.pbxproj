@@ -1,0 +1,518 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F73523371B92F505006F78CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73523361B92F505006F78CD /* AppDelegate.swift */; };
+		F73523391B92F505006F78CD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73523381B92F505006F78CD /* FirstViewController.swift */; };
+		F735233B1B92F505006F78CD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F735233A1B92F505006F78CD /* SecondViewController.swift */; };
+		F735233E1B92F505006F78CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F735233C1B92F505006F78CD /* Main.storyboard */; };
+		F73523401B92F505006F78CD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F735233F1B92F505006F78CD /* Images.xcassets */; };
+		F73523431B92F505006F78CD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73523411B92F505006F78CD /* LaunchScreen.xib */; };
+		F735234F1B92F505006F78CD /* GAT_0_8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F735234E1B92F505006F78CD /* GAT_0_8Tests.swift */; };
+		F735235F1B92F5A7006F78CD /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73523591B92F5A7006F78CD /* Bolts.framework */; };
+		F73523601B92F5A7006F78CD /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F735235A1B92F5A7006F78CD /* Parse.framework */; };
+		F73523611B92F5A7006F78CD /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F735235B1B92F5A7006F78CD /* ParseCrashReporting.framework */; };
+		F73523621B92F5A7006F78CD /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F735235C1B92F5A7006F78CD /* ParseFacebookUtils.framework */; };
+		F73523631B92F5A7006F78CD /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F735235D1B92F5A7006F78CD /* ParseFacebookUtilsV4.framework */; };
+		F73523641B92F5A7006F78CD /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F735235E1B92F5A7006F78CD /* ParseUI.framework */; };
+		F73523661B92F5DE006F78CD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73523651B92F5DE006F78CD /* AudioToolbox.framework */; };
+		F73523681B92F5EC006F78CD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73523671B92F5EC006F78CD /* CFNetwork.framework */; };
+		F735236A1B92F5FA006F78CD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73523691B92F5FA006F78CD /* CoreGraphics.framework */; };
+		F735236C1B92F60A006F78CD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F735236B1B92F60A006F78CD /* CoreLocation.framework */; };
+		F735236E1B92F616006F78CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F735236D1B92F616006F78CD /* QuartzCore.framework */; };
+		F73523701B92F620006F78CD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F735236F1B92F620006F78CD /* Security.framework */; };
+		F73523721B92F62D006F78CD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73523711B92F62D006F78CD /* StoreKit.framework */; };
+		F73523741B92F63C006F78CD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F73523731B92F63C006F78CD /* SystemConfiguration.framework */; };
+		F73523761B92F64D006F78CD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F73523751B92F64D006F78CD /* libz.dylib */; };
+		F73523781B92F65F006F78CD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F73523771B92F65F006F78CD /* libsqlite3.dylib */; };
+		F735237A1B930362006F78CD /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73523791B930362006F78CD /* CollectionViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F73523491B92F505006F78CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F73523291B92F504006F78CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F73523301B92F504006F78CD;
+			remoteInfo = "GAT 0.8";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F73523311B92F504006F78CD /* GAT 0.8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GAT 0.8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F73523351B92F505006F78CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F73523361B92F505006F78CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F73523381B92F505006F78CD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		F735233A1B92F505006F78CD /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F735233D1B92F505006F78CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F735233F1B92F505006F78CD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F73523421B92F505006F78CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F73523481B92F505006F78CD /* GAT 0.8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GAT 0.8Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F735234D1B92F505006F78CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F735234E1B92F505006F78CD /* GAT_0_8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GAT_0_8Tests.swift; sourceTree = "<group>"; };
+		F73523591B92F5A7006F78CD /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		F735235A1B92F5A7006F78CD /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		F735235B1B92F5A7006F78CD /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		F735235C1B92F5A7006F78CD /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		F735235D1B92F5A7006F78CD /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		F735235E1B92F5A7006F78CD /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		F73523651B92F5DE006F78CD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F73523671B92F5EC006F78CD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F73523691B92F5FA006F78CD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F735236B1B92F60A006F78CD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		F735236D1B92F616006F78CD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F735236F1B92F620006F78CD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F73523711B92F62D006F78CD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F73523731B92F63C006F78CD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F73523751B92F64D006F78CD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F73523771B92F65F006F78CD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F73523791B930362006F78CD /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F735232E1B92F504006F78CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F73523781B92F65F006F78CD /* libsqlite3.dylib in Frameworks */,
+				F73523761B92F64D006F78CD /* libz.dylib in Frameworks */,
+				F73523741B92F63C006F78CD /* SystemConfiguration.framework in Frameworks */,
+				F73523721B92F62D006F78CD /* StoreKit.framework in Frameworks */,
+				F73523701B92F620006F78CD /* Security.framework in Frameworks */,
+				F735236E1B92F616006F78CD /* QuartzCore.framework in Frameworks */,
+				F735236C1B92F60A006F78CD /* CoreLocation.framework in Frameworks */,
+				F735236A1B92F5FA006F78CD /* CoreGraphics.framework in Frameworks */,
+				F73523681B92F5EC006F78CD /* CFNetwork.framework in Frameworks */,
+				F73523661B92F5DE006F78CD /* AudioToolbox.framework in Frameworks */,
+				F73523641B92F5A7006F78CD /* ParseUI.framework in Frameworks */,
+				F73523601B92F5A7006F78CD /* Parse.framework in Frameworks */,
+				F73523611B92F5A7006F78CD /* ParseCrashReporting.framework in Frameworks */,
+				F73523621B92F5A7006F78CD /* ParseFacebookUtils.framework in Frameworks */,
+				F735235F1B92F5A7006F78CD /* Bolts.framework in Frameworks */,
+				F73523631B92F5A7006F78CD /* ParseFacebookUtilsV4.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F73523451B92F505006F78CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F73523281B92F504006F78CD = {
+			isa = PBXGroup;
+			children = (
+				F73523771B92F65F006F78CD /* libsqlite3.dylib */,
+				F73523751B92F64D006F78CD /* libz.dylib */,
+				F73523731B92F63C006F78CD /* SystemConfiguration.framework */,
+				F73523711B92F62D006F78CD /* StoreKit.framework */,
+				F735236F1B92F620006F78CD /* Security.framework */,
+				F735236D1B92F616006F78CD /* QuartzCore.framework */,
+				F735236B1B92F60A006F78CD /* CoreLocation.framework */,
+				F73523691B92F5FA006F78CD /* CoreGraphics.framework */,
+				F73523671B92F5EC006F78CD /* CFNetwork.framework */,
+				F73523651B92F5DE006F78CD /* AudioToolbox.framework */,
+				F73523581B92F5A7006F78CD /* parse-library-1 */,
+				F73523331B92F504006F78CD /* GAT 0.8 */,
+				F735234B1B92F505006F78CD /* GAT 0.8Tests */,
+				F73523321B92F504006F78CD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F73523321B92F504006F78CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F73523311B92F504006F78CD /* GAT 0.8.app */,
+				F73523481B92F505006F78CD /* GAT 0.8Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F73523331B92F504006F78CD /* GAT 0.8 */ = {
+			isa = PBXGroup;
+			children = (
+				F73523361B92F505006F78CD /* AppDelegate.swift */,
+				F73523791B930362006F78CD /* CollectionViewCell.swift */,
+				F73523381B92F505006F78CD /* FirstViewController.swift */,
+				F735233A1B92F505006F78CD /* SecondViewController.swift */,
+				F735233C1B92F505006F78CD /* Main.storyboard */,
+				F735233F1B92F505006F78CD /* Images.xcassets */,
+				F73523411B92F505006F78CD /* LaunchScreen.xib */,
+				F73523341B92F505006F78CD /* Supporting Files */,
+			);
+			path = "GAT 0.8";
+			sourceTree = "<group>";
+		};
+		F73523341B92F505006F78CD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F73523351B92F505006F78CD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F735234B1B92F505006F78CD /* GAT 0.8Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F735234E1B92F505006F78CD /* GAT_0_8Tests.swift */,
+				F735234C1B92F505006F78CD /* Supporting Files */,
+			);
+			path = "GAT 0.8Tests";
+			sourceTree = "<group>";
+		};
+		F735234C1B92F505006F78CD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F735234D1B92F505006F78CD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F73523581B92F5A7006F78CD /* parse-library-1 */ = {
+			isa = PBXGroup;
+			children = (
+				F73523591B92F5A7006F78CD /* Bolts.framework */,
+				F735235A1B92F5A7006F78CD /* Parse.framework */,
+				F735235B1B92F5A7006F78CD /* ParseCrashReporting.framework */,
+				F735235C1B92F5A7006F78CD /* ParseFacebookUtils.framework */,
+				F735235D1B92F5A7006F78CD /* ParseFacebookUtilsV4.framework */,
+				F735235E1B92F5A7006F78CD /* ParseUI.framework */,
+			);
+			name = "parse-library-1";
+			path = "GAT 0.8/parse-library-1";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F73523301B92F504006F78CD /* GAT 0.8 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F73523521B92F505006F78CD /* Build configuration list for PBXNativeTarget "GAT 0.8" */;
+			buildPhases = (
+				F735232D1B92F504006F78CD /* Sources */,
+				F735232E1B92F504006F78CD /* Frameworks */,
+				F735232F1B92F504006F78CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GAT 0.8";
+			productName = "GAT 0.8";
+			productReference = F73523311B92F504006F78CD /* GAT 0.8.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F73523471B92F505006F78CD /* GAT 0.8Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F73523551B92F505006F78CD /* Build configuration list for PBXNativeTarget "GAT 0.8Tests" */;
+			buildPhases = (
+				F73523441B92F505006F78CD /* Sources */,
+				F73523451B92F505006F78CD /* Frameworks */,
+				F73523461B92F505006F78CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F735234A1B92F505006F78CD /* PBXTargetDependency */,
+			);
+			name = "GAT 0.8Tests";
+			productName = "GAT 0.8Tests";
+			productReference = F73523481B92F505006F78CD /* GAT 0.8Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F73523291B92F504006F78CD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = ndrzhr;
+				TargetAttributes = {
+					F73523301B92F504006F78CD = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					F73523471B92F505006F78CD = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = F73523301B92F504006F78CD;
+					};
+				};
+			};
+			buildConfigurationList = F735232C1B92F504006F78CD /* Build configuration list for PBXProject "GAT 0.8" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F73523281B92F504006F78CD;
+			productRefGroup = F73523321B92F504006F78CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F73523301B92F504006F78CD /* GAT 0.8 */,
+				F73523471B92F505006F78CD /* GAT 0.8Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F735232F1B92F504006F78CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F735233E1B92F505006F78CD /* Main.storyboard in Resources */,
+				F73523431B92F505006F78CD /* LaunchScreen.xib in Resources */,
+				F73523401B92F505006F78CD /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F73523461B92F505006F78CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F735232D1B92F504006F78CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F735233B1B92F505006F78CD /* SecondViewController.swift in Sources */,
+				F73523371B92F505006F78CD /* AppDelegate.swift in Sources */,
+				F735237A1B930362006F78CD /* CollectionViewCell.swift in Sources */,
+				F73523391B92F505006F78CD /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F73523441B92F505006F78CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F735234F1B92F505006F78CD /* GAT_0_8Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F735234A1B92F505006F78CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F73523301B92F504006F78CD /* GAT 0.8 */;
+			targetProxy = F73523491B92F505006F78CD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F735233C1B92F505006F78CD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F735233D1B92F505006F78CD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F73523411B92F505006F78CD /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F73523421B92F505006F78CD /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F73523501B92F505006F78CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F73523511B92F505006F78CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F73523531B92F505006F78CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GAT",
+					"0.8/parse-library-1",
+				);
+				INFOPLIST_FILE = "GAT 0.8/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F73523541B92F505006F78CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GAT",
+					"0.8/parse-library-1",
+				);
+				INFOPLIST_FILE = "GAT 0.8/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F73523561B92F505006F78CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GAT 0.8Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GAT 0.8.app/GAT 0.8";
+			};
+			name = Debug;
+		};
+		F73523571B92F505006F78CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GAT 0.8Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GAT 0.8.app/GAT 0.8";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F735232C1B92F504006F78CD /* Build configuration list for PBXProject "GAT 0.8" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F73523501B92F505006F78CD /* Debug */,
+				F73523511B92F505006F78CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F73523521B92F505006F78CD /* Build configuration list for PBXNativeTarget "GAT 0.8" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F73523531B92F505006F78CD /* Debug */,
+				F73523541B92F505006F78CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F73523551B92F505006F78CD /* Build configuration list for PBXNativeTarget "GAT 0.8Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F73523561B92F505006F78CD /* Debug */,
+				F73523571B92F505006F78CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F73523291B92F504006F78CD /* Project object */;
+}

@@ -54,14 +54,19 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        labelsView = UIView(frame: CGRect(x: view.bounds.width / 2, y: 0, width: 0, height: 0));
-        labelsView.backgroundColor = UIColor.whiteColor();
+        locationManager.delegate = self;
+        locationManager.requestWhenInUseAuthorization();
+        locationManager.startUpdatingLocation();
         
-        self.labelItemName =  UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 20));
-        self.labelItemDesc = UILabel(frame: CGRect(x: 0, y: 20, width: self.view.bounds.width, height: 20));
-        self.labelItemCat = UILabel(frame: CGRect(x: 0, y: 40, width: self.view.bounds.width, height: 20));
-        self.labelItemPlace = UILabel(frame: CGRect(x: 0, y: 60, width: self.view.bounds.width, height: 20));
-        self.labelItemCon = UILabel(frame: CGRect(x: 0, y: 80, width: self.view.bounds.width, height: 20));
+        labelsView = UIView(frame: CGRect(x: 5, y: 400, width: view.bounds.width - 10, height: 200));
+        labelsView.backgroundColor = .grayColor();
+        labelsView.layer.cornerRadius = 5;
+        
+        self.labelItemName =  UILabel(frame: CGRect(x: 5, y: 0, width: self.view.bounds.width, height: 20));
+        self.labelItemDesc = UILabel(frame: CGRect(x: 5, y: 25, width: self.view.bounds.width, height: 20));
+        self.labelItemCat = UILabel(frame: CGRect(x: 5, y: 50, width: self.view.bounds.width, height: 20));
+        self.labelItemPlace = UILabel(frame: CGRect(x: 5, y: 75, width: self.view.bounds.width, height: 20));
+        self.labelItemCon = UILabel(frame: CGRect(x: 5, y: 100, width: self.view.bounds.width, height: 20));
         labelItemName.text = "labelItemName: ";
         labelItemDesc.text = "labelItemDesc: ";
         labelItemCat.text = "labelItemCat: ";
@@ -100,7 +105,7 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
         collectionViewUser.delegate = self;
         collectionViewUser.registerClass(UserInterfaceCollectionViewCell.self, forCellWithReuseIdentifier: "Cell01");
         view.backgroundColor = UIColor.lightGrayColor();
-        println("\(images.count)")
+        print("\(images.count)")
         view.addSubview(collectionViewUser)
         
         
@@ -175,8 +180,8 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
         
         if images.count <= 3{
             dismissViewControllerAnimated(true, completion: { () -> Void in
-                var alert = UIAlertController(title: "Add another Photo", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet);
-                var actionCamera = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (action: UIAlertAction!) -> Void in
+                let alert = UIAlertController(title: "Add another Photo", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet);
+                let actionCamera = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default) { (action: UIAlertAction) -> Void in
                     if self.isCameraAvialable(){
                         self.cameraController = UIImagePickerController();
                         if let theController = self.cameraController{
@@ -191,49 +196,26 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
                     }
                 }
                 
-                var actionAlbum = UIAlertAction(title: "Album", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) -> Void in
+                let actionAlbum = UIAlertAction(title: "Album", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction) -> Void in
                     self.showCameraBool = false;
                     self.showAlbumeBool = true;
                     self.showAlbum()
                 });
-                var actionCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Destructive, handler: { (action: UIAlertAction!) -> Void in
+                let actionCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Destructive, handler: { (action: UIAlertAction) -> Void in
                     self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                        println("dissmised from userInterfaceController")
+                        print("dismised from userInterfaceController")
+                        self.locationManager.stopUpdatingLocation();
                     });
                 });
-                var actionUplaod = UIAlertAction(title: "Save", style: UIAlertActionStyle.Cancel, handler: { (action:UIAlertAction!) -> Void in
-                    var btnSave = UIButton(frame: CGRect(x: self.view.bounds.width / 2 - 35, y: self.view.bounds.height - 60, width: 70, height: 70));
+                let actionUplaod = UIAlertAction(title: "Save", style: UIAlertActionStyle.Cancel, handler: { (action:UIAlertAction) -> Void in
+                    let btnSave = UIButton(frame: CGRect(x: self.view.bounds.width / 2 - 35, y: self.view.bounds.height - 60, width: 70, height: 70));
                     btnSave.setImage(UIImage(named: "Upload"), forState: UIControlState.Normal)
                     btnSave.addTarget(self, action: "uploadToServer", forControlEvents: UIControlEvents.TouchUpInside);
                     self.view.addSubview(self.labelsView);
                     self.view.addSubview(btnSave);
                     self.collectionViewUser.backgroundColor = UIColor.whiteColor();
                  // lable animation:
-                    UIView.animateWithDuration(2.0, animations: { () -> Void in
-                
-                        self.labelsView.frame = CGRectMake(10, 400, self.view.bounds.width - 18, 200);
-                        
-                        }, completion: {finished in
-                            
-                            
-                            self.labelsView.frame = CGRectMake(10, 400, self.view.bounds.width - 18, 200);
-                            
-                            self.labelItemName.frame = CGRectMake(10, 400, self.view.bounds.width - 18, 20);
-                            self.labelItemDesc.frame = CGRectMake(10, 420, self.view.bounds.width - 18, 20);
-                            self.labelItemCat.frame = CGRectMake(10, 440, self.view.bounds.width - 18, 20);
-                            self.labelItemPlace.frame = CGRectMake(10, 460, self.view.bounds.width - 18, 20);
-                            self.labelItemCon.frame = CGRectMake(10, 480, self.view.bounds.width - 18, 20);
-                            
-                            self.labelsView.backgroundColor = UIColor.lightGrayColor();
-                            println("done animation")
-                            //self.labelsView.addSubview(self.labelItemName);
-                            self.view.addSubview(self.labelItemName);
-                            self.view.addSubview(self.labelItemDesc);
-                            self.view.addSubview(self.labelItemCat);
-                            self.view.addSubview(self.labelItemPlace);
-                            self.view.addSubview(self.labelItemCon);
-                            
-                    });
+ 
                     
                     self.collectionViewUser.reloadData();
                 })
@@ -245,25 +227,15 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
                 
             });
         }else{
-            self.dismissViewControllerAnimated(true, completion: nil);
-            var btnSave = UIButton(frame: CGRect(x: self.view.bounds.width / 2 - 35, y: self.view.bounds.height - 60, width: 70, height: 70));
+            self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                self.locationManager.stopUpdatingLocation();
+            })
+            let btnSave = UIButton(frame: CGRect(x: self.view.bounds.width / 2 - 35, y: self.view.bounds.height - 60, width: 70, height: 70));
             btnSave.setImage(UIImage(named: "Upload"), forState: UIControlState.Normal)
             btnSave.addTarget(self, action: "uploadToServer", forControlEvents: UIControlEvents.TouchUpInside);
             self.collectionViewUser.backgroundColor = UIColor.whiteColor();
             self.view.addSubview(btnSave);
             self.view.addSubview(self.labelsView)
-            
-            UIView.animateWithDuration(2.0, animations: { () -> Void in
-                
-                self.labelsView.frame = CGRectMake(10, 400, self.view.bounds.width - 18, 200);
-                self.labelsView.backgroundColor = UIColor.redColor();
-                
-            });
-            
-            
-            
-            
-            
             self.collectionViewUser.reloadData();
         }
         
@@ -272,7 +244,7 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
     
     func uploadToServer(){
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
-            println("Uplaoding to the server in the background...");
+            print("Uplaoding to the server in the background...");
             var item = ItemDetails();
             item.itemName = "item name";
             item.itemDesc = "item Desc";
@@ -300,6 +272,7 @@ class UserPictureInterface: UIViewController , UICollectionViewDelegate,UICollec
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         picker.dismissViewControllerAnimated(false, completion: nil);
+        self.locationManager.stopUpdatingLocation();
         
         showAlbumeBool = false;
         showCameraBool = false;
